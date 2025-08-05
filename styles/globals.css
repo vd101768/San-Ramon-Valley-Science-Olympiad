@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 1600px) {
+  body {
+    /* Zoom out the entire page to 80% */
+    zoom: 0.8;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: "Untitled Sans";
@@ -68,7 +75,7 @@
 
   .heading {
     @apply text-8xl bg-clip-text text-transparent text-center lg:text-7xl sm:text-6xl;
-    //background-image: url("https://media.gettyimages.com/vectors/abstract-green-technology-background-vector-id180873888");
+    background-image: url("https://media.gettyimages.com/vectors/abstract-green-technology-background-vector-id180873888");
   }
 
   .menu-link {
@@ -79,3 +86,4 @@
     @apply border-b-2 border-green-600 mt-0.5 text-green-500;
   }
 }
+

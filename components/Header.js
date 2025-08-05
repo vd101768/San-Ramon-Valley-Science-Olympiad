@@ -1,10 +1,8 @@
 import { forwardRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import * as HoverCard from '@radix-ui/react-hover-card';
 import * as Dialog from '@radix-ui/react-dialog';
-import * as Accordion from '@radix-ui/react-accordion';
-import { FiMenu, FiPlus } from 'react-icons/fi';
+import { FiMenu } from 'react-icons/fi';
 
 export default function Header() {
   const DialogRoot = forwardRef((props, forwardedRef) => {
@@ -15,7 +13,13 @@ export default function Header() {
   });
   return (
     <>
-      <header className="sticky top-0 z-10 flex items-center justify-between w-full max-w-5xl px-4 py-4 mx-auto bg-black bg-opacity-10 mb-14 backdrop-saturate-150 backdrop-blur-md lg:hidden">
+      <header
+        className="sticky top-0 z-10 flex items-center justify-between w-full max-w-5xl px-4 py-4 mx-auto mb-14 backdrop-saturate-150 backdrop-blur-md lg:hidden"
+        style={{
+          backgroundColor: "transparent",
+          minWidth: "90%"
+        }}
+      >
         <Link href="/">
           <a>
             <figure className="relative w-12 h-12 mr-20">
@@ -24,6 +28,7 @@ export default function Header() {
                 alt="SRVSO Logo"
                 layout="fill"
                 objectFit="cover"
+                
               />
             </figure>
           </a>
@@ -34,9 +39,9 @@ export default function Header() {
               <a>Home</a>
             </Link>
           </li>
-          {/* <li>
+           {/* <li>
             <Link href="/resources">
-              <a>Resources</a>
+              <a>2026 Resources</a>
             </Link>
           </li> */}
           <li>
@@ -44,7 +49,7 @@ export default function Header() {
               <a>Past Olympiads</a>
             </Link>
           </li>
-
+         
           <li>
             <Link href="/board-of-officers">
               <a>Board of Officers</a>
@@ -54,7 +59,10 @@ export default function Header() {
       </header>
 
       {/* On small devices, show a hamburger menu */}
-      <header className="sticky top-0 z-10 items-center justify-between hidden w-full max-w-5xl py-3 mx-auto bg-black bg-opacity-50 px-7 mb-14 backdrop-saturate-150 backdrop-blur-md lg:flex">
+      <header
+        className="sticky top-0 z-10 items-center justify-between hidden w-full max-w-5xl py-3 mx-auto px-7 mb-14 backdrop-saturate-150 backdrop-blur-md lg:flex"
+        
+      >
         <Link href="/">
           <a>
             <figure className="relative w-10 h-10">
@@ -85,11 +93,6 @@ export default function Header() {
                       <a className="menu-link">Home</a>
                     </Link>
                   </li>
-                  {/* <li className="border-b border-gray-900">
-                    <Link href="/resources">
-                      <a className="menu-link">Resources</a>
-                    </Link>
-                  </li> */}
                   <li className="border-b border-gray-900">
                     <Link href="/past-olympiads">
                       <a className="menu-link">Past Olympiads</a>
@@ -109,3 +112,4 @@ export default function Header() {
     </>
   );
 }
+

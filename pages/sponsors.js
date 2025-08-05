@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sponsors = () => {
+const Sponsors = ({ isDark }) => {
   const sponsorData = [
     {
       name: 'Roche', // Update with the name of your first sponsor
@@ -11,9 +11,14 @@ const Sponsors = () => {
   ];
 
   return (
-    <section className="py-8 text-white bg-black">
+    <section
+      className="py-8 text-white"
+      style={{ backgroundColor: isDark ? '#000' : '#fff' }}
+    >
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="mb-4 text-3xl font-semibold">Our Sponsors</h2>
+        <h2 className="mb-4 text-3xl font-semibold" style={{ fontSize: 70, marginTop: 50, color: isDark ? '#e5e7eb' : '#18181b' }}>
+          Our Sponsors
+        </h2>
         {sponsorData.map((sponsor, index) => (
           <a
             key={index}
@@ -24,7 +29,7 @@ const Sponsors = () => {
             <img
               src={sponsor.logo}
               alt={sponsor.name}
-              style={{ width: '40%', height: '40%' }}
+              style={{ width: '70%', height: '70%', marginTop: 50 }}
               className="mx-auto"
             />
           </a>
