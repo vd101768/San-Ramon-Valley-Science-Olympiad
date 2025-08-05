@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   // Theme state: false = light, true = dark
   const [isDark, setIsDark] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Set dark class on <html> for Tailwind dark: support (not used for styles anymore)
   // Load theme from local storage on initial render
@@ -34,6 +35,7 @@ useEffect(() => {
 
   // Apply global theme styles to the body element
   useEffect(() => {
+    setLoading(false)
     document.body.style.backgroundColor = isDark ? "#000" : "#fff";
     document.body.style.color = isDark ? "#e5e7eb" : "#18181b";
     return () => {
@@ -60,6 +62,10 @@ useEffect(() => {
     testimonialsSubText: isDark ? "#a1a1aa" : "#374151",
     testimonialsCardBg: isDark ? "#232326" : "#f3f4f6",
   };
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div>
@@ -147,13 +153,13 @@ useEffect(() => {
               boxShadow: `0 0 40px 0 #4ade80", 0 0 0 4px #4ade8033`,
               borderRadius: 24,
               background: colors.cardBg,
-              marginLeft: "25%",
+              marginLeft:250
             }}
           >
-            <section>
+            <section style={{
+            }}>
               <Carousel
                 className="relative mt-0 h-[600px] w-full"
-                autoplay
                 pauseOnHover
                 swiping
                 wrapAround
