@@ -325,17 +325,29 @@ export default function BoardOfOfficers() {
       </div>
       {/* Page background */}
       
-      <div className="min-h-screen w-full px-4 pb-16 bg-black" style={{backgroundColor: colors.background}}>
-        <div className="max-w-7xl mx-auto">
+      <div  style={{backgroundColor: colors.background}}>
+        <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
           
           {tabData.sections.map(section => (
            <div key={section.title} className="mb-12">
                <em><h2 className="text-3xl font-bold text-center mb-6 text-green-300" style={{marginTop: 20, color: isDark ? "#4ade80" : "#166534"}} >{section.title}</h2></em>
-              <div className="grid grid-cols-3 gap-16 justify-center" style={{alignItems: "center", justifyContent: "center", gap: "12rem", marginLeft: "-15%", rowGap: 30}}>
+              <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
+<div
+                className="grid grid-cols-3 gap-16 justify-center
+                  md:grid-cols-2 sm:grid-cols-1 sm:gap-8"
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  rowGap: 30,
+                  gap:"12rem",
+                  marginLeft:-110
+                }}
+              >
                 {section.members.map((member, i) => (
                   <div
                     key={member.name + i}
-                    className="bg-gray-900 rounded-xl shadow-lg flex flex-col items-center p-8 w-[320px] min-h-[370px] transition hover:scale-105"
+                    className="bg-gray-900 rounded-xl shadow-lg flex flex-col items-center p-8 w-[320px] min-h-[370px] transition hover:scale-105
+                      sm:w-full sm:min-w-0 sm:p-4"
                     style={{
                       backgroundColor: colors.cardBg
                     }}
@@ -363,6 +375,8 @@ export default function BoardOfOfficers() {
                   </div>
                 ))}
               </div>
+              </div>
+              
             </div>
           ))}
         </div>

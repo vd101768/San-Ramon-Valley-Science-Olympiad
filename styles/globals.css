@@ -85,5 +85,26 @@
   .tabs-trigger[data-state="active"] {
     @apply border-b-2 border-green-600 mt-0.5 text-green-500;
   }
+
+  @media (min-width: 1200px) {
+    .olympiad-grid-center {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: 100%;
+      max-width: 1440px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      justify-items: center;
+    }
+  }
+  @media (max-width: 1199px) {
+    .olympiad-grid-center {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
 }
 
