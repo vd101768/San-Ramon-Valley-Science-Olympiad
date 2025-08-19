@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 1600px) {
+  body {
+    /* Zoom out the entire page to 80% */
+    zoom: 0.8;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: "Untitled Sans";
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    src: url("/fonts/UntitledSansWeb-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Untitled Sans";
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+    src: url("/fonts/UntitledSansWeb-Medium.woff2") format("woff2");
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-black text-gray-500;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-gray-100 font-medium;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  a {
+    @apply hover:text-gray-400 transition-colors;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-4xl mx-auto px-6;
+  }
+
+  .gradient-canvas {
+    @apply w-full h-full blur-sm;
+    --gradient-color-1: #56c596;
+    --gradient-color-2: #205072;
+    --gradient-color-3: #329d9c;
+    --gradient-color-4: #7be495;
+  }
+
+  .accordion-item:not(:last-child) {
+    @apply border-b border-gray-700;
+  }
+
+  .heading {
+    @apply text-8xl bg-clip-text text-transparent text-center lg:text-7xl sm:text-6xl;
+    background-image: url("https://media.gettyimages.com/vectors/abstract-green-technology-background-vector-id180873888");
+  }
+
+  .menu-link {
+    @apply hover:text-gray-200 text-2xl sm:text-xl font-medium text-gray-400 relative block py-6 px-12 xs:py-4;
+  }
+
+  .tabs-trigger[data-state="active"] {
+    @apply border-b-2 border-green-600 mt-0.5 text-green-500;
+  }
+
+  @media (min-width: 1200px) {
+    .olympiad-grid-center {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: 100%;
+      max-width: 1440px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      justify-items: center;
+    }
+  }
+  @media (max-width: 1199px) {
+    .olympiad-grid-center {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}
+
