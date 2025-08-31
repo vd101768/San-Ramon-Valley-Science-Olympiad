@@ -79,18 +79,16 @@ useEffect(() => {
       {/* Theme Toggle Button */}
       <button
           onClick={toggleTheme}
-          className="fixed z-50 p-2 rounded-full shadow transition-all duration-300
-            top-6 right-8
-            sm:absolute sm:top-4 sm:right-4 sm:p-1"
+          className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8 sm:absolute sm:top-4 sm:right-4 sm:p-1"
           style={{
             pointerEvents: "auto"
           }}
           aria-label="Toggle theme"
         >
           {isDark ? (
-            <FaSun className="text-white text-xl sm:text-lg" />
+            <FaSun className="text-xl text-white sm:text-lg" />
           ) : (
-            <FaMoon className="text-gray-800 text-xl sm:text-lg" />
+            <FaMoon className="text-xl text-gray-800 sm:text-lg" />
           )}
         </button>
       {/* Root div */}
@@ -102,8 +100,7 @@ useEffect(() => {
         }}
       >
         <div
-          className="flex flex-row max-w-6xl mx-auto mt-20 gap-x-20 items-start
-            sm:flex-col sm:gap-x-0 sm:gap-y-10 sm:items-center"
+          className="flex flex-row items-start max-w-6xl mx-auto mt-20 gap-x-20 sm:flex-col sm:gap-x-0 sm:gap-y-10 sm:items-center"
           style={{ marginLeft: "0" }}
         >
           {/* Left: Text content */}
@@ -278,7 +275,7 @@ useEffect(() => {
         </div>
 
         <section
-          className="flex justify-between max-w-7xl mx-auto mt-32 gap-x-16 sm:flex-col sm:gap-y-8 sm:mt-8 w-full px-8"
+          className="flex justify-between w-full px-8 mx-auto mt-32 max-w-7xl gap-x-16 sm:flex-col sm:gap-y-8 sm:mt-8"
           style={{
             width: "100%",
             alignItems: "center",
@@ -298,7 +295,7 @@ useEffect(() => {
               className="mb-4"
               style={{ width: 60, height: 60, color: colors.icon }}
             />
-            <p className="text-center text-lg sm:text-base" style={{ fontSize: 20 }}>
+            <p className="text-lg text-center sm:text-base" style={{ fontSize: 20 }}>
               Curriculum aligned with Common Core and Next generation science
               standards.
             </p>
@@ -315,7 +312,7 @@ useEffect(() => {
               className="mb-4"
               style={{ width: 60, height: 60, color: colors.icon }}
             />
-            <p className="text-center text-lg sm:text-base" style={{ fontSize: 20 }}>
+            <p className="text-lg text-center sm:text-base" style={{ fontSize: 20 }}>
               Promotes life skills such as organization, leadership, confidence,
               team work and more.
             </p>
@@ -332,7 +329,7 @@ useEffect(() => {
               className="mb-4"
               style={{ width: 60, height: 60, color: colors.icon }}
             />
-            <p className="text-center text-lg sm:text-base" style={{ fontSize: 20 }}>
+            <p className="text-lg text-center sm:text-base" style={{ fontSize: 20 }}>
               Work in a team of peers to be rewarded for the pursuit of scientific
               achievement.
             </p>
@@ -343,7 +340,7 @@ useEffect(() => {
 
         {/* Testimonials Section */}
         <section
-          className="w-full py-24 flex flex-col items-center mt-8 sm:py-8"
+          className="flex flex-col items-center w-full py-24 mt-8 sm:py-8"
           style={{
             marginTop: -50,
             background: colors.testimonialsBg,
@@ -351,14 +348,14 @@ useEffect(() => {
           }}
         >
           <h1
-            className="text-10xl font-bold mb-2 tracking-wide text-center sm:text-2xl"
+            className="mb-2 font-bold tracking-wide text-center text-10xl sm:text-2xl"
             style={{ color: isDark ? "#fff" : "#222" }}
           >
-            TESTIMONIALS
+            Testimonials
           </h1>
           <em>
             <p
-              className="text-lg mb-12 text-center max-w-2xl sm:text-sm"
+              className="max-w-2xl mb-12 text-lg text-center sm:text-sm"
               style={{ color: colors.testimonialsSubText }}
             >
               Hear from our community about their SRVSO experience.
@@ -381,7 +378,7 @@ useEffect(() => {
               }}
             >
               <p
-                className="italic text-center mb-6 sm:text-sm"
+                className="mb-6 italic text-center sm:text-sm"
                 style={{
                   fontSize: 18,
                   lineHeight: 1.5,
@@ -406,7 +403,7 @@ useEffect(() => {
               }}
             >
               <p
-                className="italic text-center mb-6 sm:text-sm"
+                className="mb-6 italic text-center sm:text-sm"
                 style={{
                   fontSize: 18,
                   lineHeight: 1.5,
@@ -431,7 +428,7 @@ useEffect(() => {
               }}
             >
               <p
-                className="italic text-center mb-6 sm:text-sm"
+                className="mb-6 italic text-center sm:text-sm"
                 style={{
                   fontSize: 18,
                   lineHeight: 1.5,
