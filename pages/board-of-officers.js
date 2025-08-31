@@ -119,7 +119,7 @@ const OFFICERS = [
           {
             name: 'Chhavi Bidhuri',
             img: '/images/officers/chhavi.png',
-            desc: "Chhavi is a senior at Dougherty Valley High School. She is an aspiring researcher in molecular and cellular biology and her goal is to help support young, aspiring students in their exploration of STEM. Chhavi has been involved with SRVSO for four years and currently serves as a Co-Associate Director. In the past she has served as an Instant Challenge Head Officer and Instant Challenge Officer.",
+            desc: "Chhavi is a senior at Dougherty Valley High School. She is an aspiring researcher in molecular and cellular biology and her goal is to help support young students in their exploration of STEM. Chhavi has been involved with SRVSO for four years and currently serves as a Co-Associate Director. In the past she has served as an Instant Challenge Head Officer and Instant Challenge Officer.",
             role: "Associate Director"
           }
         ],
@@ -135,7 +135,7 @@ const OFFICERS = [
           {
             name: 'Harshidh Ramkumar',
             img: '/images/officers/harshidh.png',
-            desc: "Harshidh is a Senior at Dougherty Valley High School. He has an interest in Business and is specifically trying to go into Management. Harshidh has been a part of the SRVSO for 2 years and is currently the Build Events Head Officer. In the past, he has served as an intern and a build officer.",
+            desc: "Harshidh is a senior at Dougherty Valley High School. He has an interest in Business and is specifically trying to go into Management. Harshidh has been a part of the SRVSO for 2 years and is currently the Build Events Head Officer. In the past, he has served as an intern and a build officer.",
             role: "Build Events Head"
           },
           {
@@ -169,7 +169,7 @@ const OFFICERS = [
           {
             name: 'Ami Ajgaonkar',
             img: '/images/officers/ami.png',
-            desc: "Ami is a sophomore at Dougherty Valley High School. She is interested in combining her passion for technology and genetics in the future, and is excited to work with SRVSO this year to inspire young minds in STEM. This is Ami's first year on the SRVSO Board, and she is currently serving as an Officer for the Theory Events Committee. In the past, she has served as an intern.",
+            desc: "Ami is a sophomore at Dougherty Valley High School. She is interested in combining her passion for technology and genetics in the future, and is excited to work with SRVSO this year to inspire young minds in STEM. This is Ami's first year on the SRVSO Board, and she is currently serving as a Theory Events Officer.",
             role: "Theory Event Officer"
           },
           {
@@ -191,13 +191,13 @@ const OFFICERS = [
           {
             name: 'Rishab Guntuku',
             img: '/images/officers/rishab.png',
-            desc: "Rishab is a Junior at Dougherty Valley High School. He is an aspiring computer/electrical engineer passionate about giving younger STEM students more learning opportunities, especially with the emergence of AI. Rishab has been with the SRVSO for two years now and is currently the IC Head Officer. In the past, he has served as an IC Officer and Intern.",
+            desc: "Rishab is a Junior at Dougherty Valley High School. He is an aspiring computer/electrical engineer passionate about giving younger STEM students more learning opportunities, especially with the emergence of AI. Rishab has been with the SRVSO for two years now and is currently the IC Head Officer. In the past, he has served as an IC Officer.",
             role: "Instant Challenge Head"
           },
           {
             name: "Aasiya Juneja",
             img: '/images/officers/aasiya.png',
-            desc: "Aasiya is a sophomore at Dougherty Valley High School. She wants to go into Business and Finance. She wants to help provide students with more opportunities to grow their skills as problem solvers. This is her first year with SRVSO and she is serving as an IC officer. She has been an intern in the past.",
+            desc: "Aasiya is a sophomore at Dougherty Valley High School. She wants to go into Business and Finance. She wants to help provide students with more opportunities to grow their skills as problem solvers. This is her first year with SRVSO and she is serving as an IC officer.",
             role: "Instant Challenge Officer"
           },
           {
@@ -225,7 +225,7 @@ const OFFICERS = [
           {
             name: 'Sundar Subramanian',
             img: '/images/officers/sundar.png',
-            desc: "Ami is a sophomore at Dougherty Valley High School. She is interested in combining her passion for technology and genetics in the future, and is excited to work with SRVSO this year to inspire young minds in STEM. This is Ami's first year on the SRVSO Board, and she is currently serving as an Officer for the Theory Events Committee. In the past, she has served as an intern.",
+            desc: "Ami is a sophomore at Dougherty Valley High School. She is interested in combining her passion for technology and genetics in the future, and is excited to work with SRVSO this year to inspire young minds in STEM. This is Ami's first year on the SRVSO Board, and she is currently serving as an Officer for the Theory Events Committee.",
             role: "Executive Director"
           },
           {
