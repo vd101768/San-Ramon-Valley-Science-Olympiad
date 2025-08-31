@@ -8,7 +8,8 @@ const TABS = [
   { key: 'executivedivision', label: 'Executive Division' },
   { key: 'buildeventsdivision', label: 'Build Events Division' },
   { key: 'theoryeventsdivision', label: 'Theory Events Division' },
-  { key: 'instantchallengedivision', label: 'Instant Challenge Division' }
+  { key: 'instantchallengedivision', label: 'Instant Challenge Division' },
+  {key: 'boardofdirectors', label: 'Board of Directors' },
 ];
 
 // Officer data (grouped by committee/role)
@@ -208,14 +209,42 @@ const OFFICERS = [
         ],
       },
     ],
-  },,
+  },
+   {
+    key: 'boardofdirectors',
+    sections: [
+      {
+        title: 'Board of Directors',
+        members: [
+          {
+            name: 'Alagu Subramanian',
+            img: '/images/officers/alagu.png',
+            desc: "Sophia is a junior at Dougherty Valley High School. She is looking to go into the STEM field and hopes to introduce others to the field as well. This is her second year at SRVSO, and she currently serves as a Theory Head Officer. In the past, she has served as a Theory Event Officer and Intern.",
+            role: "Exective Director"
+          },
+          {
+            name: 'Sundar Subramanian',
+            img: '/images/officers/sundar.png',
+            desc: "Ami is a sophomore at Dougherty Valley High School. She is interested in combining her passion for technology and genetics in the future, and is excited to work with SRVSO this year to inspire young minds in STEM. This is Ami's first year on the SRVSO Board, and she is currently serving as an Officer for the Theory Events Committee. In the past, she has served as an intern.",
+            role: "Executive Director"
+          },
+          {
+            name: 'Arush Jain',
+            img: '/images/officers/arush.png',
+            desc: "Krishna is a junior at Dougherty Valley High School. He aspires to pursue biochemical research and is passionate about bringing interest in STEM to others. This is his first year at SRVSO, and he currently serves as a Theory Officer.",
+            role: "Exective Director"
+          }
+        ],
+      },
+    ],
+  },
 ];
 
 // Icon mapping
 function OfficerIcon({ type }) {
   if (type === 'lead') {
     return (
-      <span className="block text-center mt-2 mb-1">
+      <span className="block mt-2 mb-1 text-center">
         <span role="img" aria-label="leadership" className="inline-block text-xl">🧑‍💼</span>
       </span>
     );
@@ -226,7 +255,7 @@ function OfficerIcon({ type }) {
 
 export default function BoardOfOfficers() {
   const [tab, setTab] = useState('all');
-  const tabData = OFFICERS.find(t => t.key === tab);
+  const tabData = OFFICERS.find(t => t.key === tab) || {sections: []};
   const [isDark, setIsDark] = useState(false);
 
   // Load theme from local storage on initial render
@@ -281,13 +310,13 @@ export default function BoardOfOfficers() {
     <>
     <button
           onClick={toggleTheme}
-          className="fixed top-6 right-8 z-50 p-2 rounded-full shadow "
+          className="fixed z-50 p-2 rounded-full shadow top-6 right-8 "
           aria-label="Toggle theme"
         >
           {isDark ? (
-            <FaSun className="text-white text-xl" />
+            <FaSun className="text-xl text-white" />
           ) : (
-            <FaMoon className="text-gray-800 text-xl" />
+            <FaMoon className="text-xl text-gray-800" />
           )}
         </button>
       <Head>
@@ -299,8 +328,8 @@ export default function BoardOfOfficers() {
         />
       </Head>
       {/* Tabs */}
-      <h1 className="text-5xl font-bold text-center pt-8 pb-2 text--400" style={{color: colors.text}}>Board of Officers</h1>
-      <div className="w-full flex justify-center bg-black pt-8 pb-2" style={{backgroundColor: colors.background}}>
+      <h1 className="pt-8 pb-2 text-5xl font-bold text-center text--400" style={{color: colors.text}}>Board of Officers</h1>
+      <div className="flex justify-center w-full pt-8 pb-2 bg-black" style={{backgroundColor: colors.background}}>
         <div className="flex gap-2" >
           {TABS.map(t => (
             <button
@@ -330,11 +359,10 @@ export default function BoardOfOfficers() {
           
           {tabData.sections.map(section => (
            <div key={section.title} className="mb-12">
-               <em><h2 className="text-3xl font-bold text-center mb-6 text-green-300" style={{marginTop: 20, color: isDark ? "#4ade80" : "#166534"}} >{section.title}</h2></em>
+               <em><h2 className="mb-6 text-3xl font-bold text-center text-green-300" style={{marginTop: 20, color: isDark ? "#4ade80" : "#166534"}} >{section.title}</h2></em>
               <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
 <div
-                className="grid grid-cols-3 gap-16 justify-center
-                  md:grid-cols-2 sm:grid-cols-1 sm:gap-8"
+                className="grid justify-center grid-cols-3 gap-16 md:grid-cols-2 sm:grid-cols-1 sm:gap-8"
                 style={{
                   alignItems: "center",
                   justifyContent: "center",
@@ -352,7 +380,7 @@ export default function BoardOfOfficers() {
                       backgroundColor: colors.cardBg
                     }}
                   >
-                    <div className="w-36 h-36 rounded-xl overflow-hidden mb-4 flex items-center justify-center ">
+                    <div className="flex items-center justify-center mb-4 overflow-hidden w-36 h-36 rounded-xl ">
                       <img
                         src={member.img}
                         alt={member.name}
@@ -364,13 +392,13 @@ export default function BoardOfOfficers() {
                       />
                     </div>
                     <OfficerIcon type={member.icon} />
-                    <div className="text-2xl font-medium text-center text-green-400 mb-1" style={{color: isDark ? "#4ade80" : "#166534"}}>{member.name}</div>
+                    <div className="mb-1 text-2xl font-medium text-center text-green-400" style={{color: isDark ? "#4ade80" : "#166534"}}>{member.name}</div>
                     {/* Role below name */}
                     {member.role && (
-                      <div className="text-center italic text-sm text-gray-400 mb-1">{member.role}</div>
+                      <div className="mb-1 text-sm italic text-center text-gray-400">{member.role}</div>
                     )}
                     {member.desc && (
-                      <div className="text-center text-xs text-gray-200 mt-2" style={{color: colors.cardSubText}}>{member.desc}</div>
+                      <div className="mt-2 text-xs text-center text-gray-200" style={{color: colors.cardSubText}}>{member.desc}</div>
                     )}
                   </div>
                 ))}
