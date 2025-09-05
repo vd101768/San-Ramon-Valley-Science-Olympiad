@@ -219,21 +219,21 @@ const OFFICERS = [
           {
             name: 'Alagu Subramanian',
             img: '/images/officers/alagu.png',
-            desc: "Sophia is a junior at Dougherty Valley High School. She is looking to go into the STEM field and hopes to introduce others to the field as well. This is her second year at SRVSO, and she currently serves as a Theory Head Officer. In the past, she has served as a Theory Event Officer and Intern.",
-            role: "Exective Director"
-          },
+            desc: "Alagu is a current medical student at Duke University School of Medicine, holds an MPhil research degree from the University of Cambridge as a Churchill Scholar, and an alumni of Baylor University where he concentrated in biochemistry, medical humanities, and business. He is a medical researcher and aspiring physician with a passion for increasing the accessibility to hands-on education in K-12 instruction. Alagu has been with the SRVSO since its beginning as our founder and currently serves as the Chairman of our Board of Directors.",
+            role: "Founder and Chairman of the Board of Directors, Executive Director from 2018-2020"
+          }, 
           {
             name: 'Sundar Subramanian',
             img: '/images/officers/sundar.png',
-            desc: "Ami is a sophomore at Dougherty Valley High School. She is interested in combining her passion for technology and genetics in the future, and is excited to work with SRVSO this year to inspire young minds in STEM. This is Ami's first year on the SRVSO Board, and she is currently serving as an Officer for the Theory Events Committee.",
-            role: "Executive Director"
+            desc: "Sundar is currently an undergraduate student at UC Berkeley, studying Applied Mathematics and Computer Science. He aspires to work at the intersection of technology and finance and has conducted research in stochastic processes. Sundar has been involved with SRVSO since its founding in 2018, serving in various roles—from Build Events Chair to Executive Director. He now serves as President of the Board of Directors.",
+            role: "Founding Member, Executive Director 2024-2025 and 2023-2024"
           },
-          {
+           /*{
             name: 'Arush Jain',
             img: '/images/officers/arush.png',
             desc: "Krishna is a junior at Dougherty Valley High School. He aspires to pursue biochemical research and is passionate about bringing interest in STEM to others. This is his first year at SRVSO, and he currently serves as a Theory Officer.",
             role: "Exective Director"
-          }
+          } */
         ],
       },
     ],
@@ -362,15 +362,20 @@ export default function BoardOfOfficers() {
                <em><h2 className="mb-6 text-3xl font-bold text-center text-green-300" style={{marginTop: 20, color: isDark ? "#4ade80" : "#166534"}} >{section.title}</h2></em>
               <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
 <div
-                className="grid justify-center grid-cols-3 gap-16 md:grid-cols-2 sm:grid-cols-1 sm:gap-8"
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  rowGap: 30,
-                  gap:"12rem",
-                  marginLeft:-110
-                }}
-              >
+  className={section.members.length <= 2 
+    ? 'flex justify-center gap-8' 
+    : 'grid justify-center grid-cols-3 gap-16 md:grid-cols-2 sm:grid-cols-1 sm:gap-8'
+  }
+  style={{
+    alignItems: "center",
+    justifyContent: "center",
+    ...(section.members.length > 2 && {
+      rowGap: 30,
+      gap: "12rem",
+      marginLeft: -110
+    })
+  }}
+>
                 {section.members.map((member, i) => (
                   <div
                     key={member.name + i}
