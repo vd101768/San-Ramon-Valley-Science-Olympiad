@@ -100,9 +100,10 @@ useEffect(() => {
         }}
       >
         <div
-          className="flex flex-row items-start max-w-6xl mx-auto mt-20 gap-x-20 sm:flex-col sm:gap-x-0 sm:gap-y-10 sm:items-center"
+          className="flex flex-row items-start max-w-6xl mx-auto mt-20 sm:mt-8 gap-x-20 sm:flex-col sm:gap-x-0 sm:gap-y-10 sm:items-center"
           style={{ marginLeft: "0" }}
-        >
+          >
+
           {/* Left: Text content */}
           <div
             className="flex-1 min-w-[420px] max-w-md w-full sm:min-w-[320px] sm:max-w-full"
