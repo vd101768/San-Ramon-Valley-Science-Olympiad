@@ -9,7 +9,7 @@ const TABS = [
   { key: 'buildeventsdivision', label: 'Build Events Division' },
   { key: 'theoryeventsdivision', label: 'Theory Events Division' },
   { key: 'instantchallengedivision', label: 'Instant Challenge Division' },
-  {key: 'boardofdirectors', label: 'Board of Directors' },
+  { key: 'boardofdirectors', label: 'Board of Directors' },
 ];
 
 // Officer data (grouped by committee/role)
@@ -228,12 +228,6 @@ const OFFICERS = [
             desc: "Sundar is currently an undergraduate student at UC Berkeley, studying Applied Mathematics and Computer Science. He aspires to work at the intersection of technology and finance and has conducted research in stochastic processes. Sundar has been involved with SRVSO since its founding in 2018, serving in various roles—from Build Events Chair to Executive Director. He now serves as President of the Board of Directors.",
             role: "Founding Member, Executive Director 2024-2025 and 2023-2024"
           },
-           /*{
-            name: 'Arush Jain',
-            img: '/images/officers/arush.png',
-            desc: "Krishna is a junior at Dougherty Valley High School. He aspires to pursue biochemical research and is passionate about bringing interest in STEM to others. This is his first year at SRVSO, and he currently serves as a Theory Officer.",
-            role: "Exective Director"
-          } */
         ],
       },
     ],
@@ -249,7 +243,6 @@ function OfficerIcon({ type }) {
       </span>
     );
   }
-  // Add more icons as needed
   return null;
 }
 
@@ -308,38 +301,137 @@ export default function BoardOfOfficers() {
 
   return (
     <>
-    <button
-          onClick={toggleTheme}
-          className="fixed z-50 p-2 rounded-full shadow top-6 right-8 "
-          aria-label="Toggle theme"
-        >
-          {isDark ? (
-            <FaSun className="text-xl text-white" />
-          ) : (
-            <FaMoon className="text-xl text-gray-800" />
-          )}
-        </button>
+      <button
+        onClick={toggleTheme}
+        className="fixed z-50 p-2 rounded-full shadow top-6 right-8 "
+        aria-label="Toggle theme"
+      >
+        {isDark ? (
+          <FaSun className="text-xl text-white" />
+        ) : (
+          <FaMoon className="text-xl text-gray-800" />
+        )}
+      </button>
+      
       <Head>
-        
         <title>Board of Officers — SRVSO</title>
         <meta
           name="description"
           content="The board that makes SRVSO possible."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+
+      <style jsx>{`
+        .officers-grid {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          max-width: 1200px;
+          width: 100%;
+          padding: 0 20px;
+        }
+
+        .officer-card {
+          width: 320px;
+          max-width: 100%;
+          min-height: 400px;
+          border-radius: 12px;
+          padding: 2rem;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: transform 150ms ease;
+        }
+
+        .officer-card:hover { transform: scale(1.01); }
+
+        .officer-img {
+          width: 144px;
+          height: 144px;
+          border-radius: 16px;
+          overflow: hidden;
+          display: inline-block;
+          box-sizing: border-box;
+          flex: 0 0 auto;
+        }
+        .officer-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        /* Tabs row scroll behavior (mobile only) */
+        .tabs-row {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+        /* prevent buttons from shrinking when the row scrolls */
+        .tabs-row button {
+          flex: 0 0 auto;
+          white-space: nowrap;
+        }
+
+        @media (max-width: 640px) {
+          .officers-grid {
+            grid-template-columns: 1fr;
+            padding: 0 12px;
+          }
+          .officer-card {
+            width: 320px;
+            margin: 0 auto;
+          }
+          .officer-img {
+            width: 144px;
+            height: 144px;
+          }
+
+          /* Enable horizontal scrolling of the tabs row */
+          .tabs-row {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 12px;
+            gap: 0.75rem;
+            scroll-padding: 12px;
+            scroll-snap-type: x mandatory;
+          }
+          .tabs-row button {
+            scroll-snap-align: start;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+          }
+          .tabs-row::-webkit-scrollbar { display: none; } /* hide webkit scrollbar */
+
+          /* Reduce top padding so the title sits a bit higher on mobile */
+          h1 {
+            padding-top: 0.5rem !important; /* smaller than the desktop pt-8 */
+            padding-bottom: 0.25rem !important;
+            font-size: 1.75rem !important; /* slightly smaller than text-5xl */
+            line-height: 1.1;
+          }
+
+          /* Slightly smaller section headers on mobile */
+          h2 {
+            font-size: 1.25rem !important; /* slightly smaller than text-3xl */
+            margin-top: 12px;
+            margin-bottom: 8px;
+          }
+        }
+      `}</style>
+      
       {/* Tabs */}
       <h1 className="pt-8 pb-2 text-5xl font-bold text-center text--400" style={{color: colors.text}}>Board of Officers</h1>
       <div className="flex justify-center w-full pt-8 pb-2 bg-black" style={{backgroundColor: colors.background}}>
-        <div className="flex gap-2" >
+        {/* changed this inner div to use .tabs-row so mobile can scroll */}
+        <div className="tabs-row" >
           {TABS.map(t => (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`px-5 py-2 rounded-t-lg font-medium transition-colors ${
-                tab === t.key
-                  ? 'bg-gray-900 text-green-400 shadow'
-                  : 'bg-gray-800 text-gray-200 hover:bg-gray-700'
-              }`}
+              className={`px-5 py-2 rounded-t-lg font-medium transition-colors`}
               style={{
                 borderBottom: tab === t.key ?  `3px solid ${isDark ? "#4ade80" : "#166534"}` : '3px solid transparent',
                 outline: 'none',
@@ -352,64 +444,52 @@ export default function BoardOfOfficers() {
           ))}
         </div>
       </div>
-      {/* Page background */}
       
-      <div  style={{backgroundColor: colors.background}}>
+      {/* Page background */}
+      <div style={{backgroundColor: colors.background}}>
         <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
           
           {tabData.sections.map(section => (
-           <div key={section.title} className="mb-12">
-               <em><h2 className="mb-6 text-3xl font-bold text-center text-green-300" style={{marginTop: 20, color: isDark ? "#4ade80" : "#166534"}} >{section.title}</h2></em>
-              <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
-<div
-  className={section.members.length <= 2 
-    ? 'flex justify-center gap-8' 
-    : 'grid justify-center grid-cols-3 gap-16 md:grid-cols-2 sm:grid-cols-1 sm:gap-8'
-  }
-  style={{
-    alignItems: "center",
-    justifyContent: "center",
-    ...(section.members.length > 2 && {
-      rowGap: 30,
-      gap: "12rem",
-      marginLeft: -110
-    })
-  }}
->
-                {section.members.map((member, i) => (
-                  <div
-                    key={member.name + i}
-                    className="bg-gray-900 rounded-xl shadow-lg flex flex-col items-center p-8 w-[320px] min-h-[370px] transition hover:scale-105
-                      sm:w-full sm:min-w-0 sm:p-4"
-                    style={{
-                      backgroundColor: colors.cardBg
-                    }}
-                  >
-                    <div className="flex items-center justify-center mb-4 overflow-hidden w-36 h-36 rounded-xl ">
-                      <img
-                        src={member.img}
-                        alt={member.name}
-                        className="object-cover w-full h-full"
-                        style={{
-                          borderRadius: 16,
-                          border: `2px solid ${isDark ? "#4ade80" : "#166534"}`,
-                        }}
-                      />
-                    </div>
-                    <OfficerIcon type={member.icon} />
-                    <div className="mb-1 text-2xl font-medium text-center text-green-400" style={{color: isDark ? "#4ade80" : "#166534"}}>{member.name}</div>
-                    {/* Role below name */}
-                    {member.role && (
-                      <div className="mb-1 text-sm italic text-center text-gray-400">{member.role}</div>
-                    )}
-                    {member.desc && (
-                      <div className="mt-2 text-xs text-center text-gray-200" style={{color: colors.cardSubText}}>{member.desc}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              </div>
+            <div key={section.title} className="mb-12">
+              <em><h2 className="mb-6 text-3xl font-bold text-center text-green-300" style={{marginTop: 20, color: isDark ? "#4ade80" : "#166534"}} >{section.title}</h2></em>
               
+              <div style={{alignItems:"center", justifyContent:"center", display:"flex"}}>
+                <div className="officers-grid">
+                  {section.members.map((member, i) => (
+                    <div
+                      key={member.name + i}
+                      className="officer-card bg-gray-900 rounded-xl shadow-lg flex flex-col items-center p-8 transition hover:scale-[1.01]"
+                      style={{
+                        backgroundColor: colors.cardBg,
+                        minHeight: '400px',
+                        color: colors.cardText,
+                        boxShadow: 'var(--tw-shadow, 0 10px 15px -3px rgba(0,0,0,0.1))',
+                        border: `1px solid ${isDark ? '#27272a' : '#e5e7eb'}`
+                      }}
+                    >
+                      <div className="flex items-center justify-center mb-4 overflow-hidden officer-img rounded-xl" style={{width: 144, height: 144, border: `2px solid ${isDark ? "#4ade80" : "#166534"}`}}>
+                        <img
+                          src={member.img}
+                          alt={member.name}
+                          className="object-cover w-full h-full"
+                          style={{
+                            borderRadius: 16,
+                          }}
+                        />
+                      </div>
+                      <OfficerIcon type={member.icon} />
+                      <div className="mb-1 text-2xl font-medium text-center text-green-400" style={{color: isDark ? "#4ade80" : "#166534"}}>{member.name}</div>
+                      {/* Role below name */}
+                      {member.role && (
+                        <div className="mb-2 text-sm italic text-center text-gray-400" style={{color: colors.cardSubText}}>{member.role}</div>
+                      )}
+                      {member.desc && (
+                        <div className="mt-2 text-sm leading-relaxed text-center" style={{color: colors.cardSubText, maxWidth: '280px'}}>{member.desc}</div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>

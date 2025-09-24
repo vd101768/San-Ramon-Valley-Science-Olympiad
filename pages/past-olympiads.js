@@ -102,92 +102,94 @@ export default function PastOlympiads() {
         {/* Theme Toggle Button */}
         <button
           onClick={toggleTheme}
-          className="fixed top-6 right-8 z-50 p-2 rounded-full shadow transition-all duration-300"
+          className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8"
           aria-label="Toggle theme"
         >
           {isDark ? (
-            <FaSun className="text-white text-xl" />
+            <FaSun className="text-xl text-white" />
           ) : (
-            <FaMoon className="text-gray-800 text-xl" />
+            <FaMoon className="text-xl text-gray-800" />
           )}
         </button>
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <h1 className="text-5xl font-bold text-center mb-2" style={{ color: colors.text }}>
+        <div className="max-w-6xl px-4 py-12 mx-auto">
+          <h1 className="mb-2 text-3xl font-bold text-center md:text-5xl" style={{ color: colors.text }}>
             Past Olympiads
           </h1>
-          <p className="text-center text-lg mb-12" style={{ color: colors.subtext }}>
+          <p className="mb-12 text-base text-center md:text-lg" style={{ color: colors.subtext }}>
             A gallery of past olympiads, with pictures and results.
           </p>
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-8 md:gap-16">
             {OLYMPIADS.map((olympiad, idx) => (
               <div
                 key={olympiad.year}
-                className="rounded-2xl shadow-xl border"
+                className="p-4 border shadow-xl rounded-2xl md:p-8 lg:p-10"
                 style={{
                   background: colors.card,
                   borderColor: colors.border,
-                  padding: "2.5rem 2rem"
                 }}
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-8">
+                <div className="flex flex-col gap-6 md:gap-8">
                   {/* Carousel */}
-                  <div className="flex-1 flex justify-center items-center">
-                    <Carousel
-                      className="rounded-xl shadow border-2 border-green-400 overflow-hidden"
-                      autoplay
-                      pauseOnHover
-                      swiping
-                      wrapAround
-                      style={{
-                        width: "100%",
-                        maxWidth: 480,
-                        minHeight: 320,
-                        borderColor: colors.border,
-                        background: "#000"
-                      }}
-                      renderCenterLeftControls={({ previousSlide }) => (
-                        <button
-                          onClick={previousSlide}
-                          className="p-2 bg-gray-900 bg-opacity-40 rounded-full ml-2 focus:outline-none hover:bg-opacity-60"
-                          aria-label="Previous Slide"
-                        >
-                          <FaChevronLeft className="text-white text-xl" />
-                        </button>
-                      )}
-                      renderCenterRightControls={({ nextSlide }) => (
-                        <button
-                          onClick={nextSlide}
-                          className="p-2 bg-gray-900 bg-opacity-40 rounded-full mr-2 focus:outline-none hover:bg-opacity-60"
-                          aria-label="Next Slide"
-                        >
-                          <FaChevronRight className="text-white text-xl" />
-                        </button>
-                      )}
-                    >
-                      {olympiad.images.map((img, i) => (
-                        <img
-                          key={i}
-                          src={img}
-                          alt={`Olympiad ${olympiad.year} Image ${i + 1}`}
-                          className="w-full h-80 object-cover"
-                          style={{ borderRadius: 16, border: `2px solid ${colors.border}` }}
-                        />
-                      ))}
-                    </Carousel>
+                  <div className="flex justify-center w-full">
+                    <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
+                      <Carousel
+                        className="overflow-hidden border-2 border-green-400 shadow rounded-xl"
+                        autoplay
+                        pauseOnHover
+                        swiping
+                        wrapAround
+                        style={{
+                          width: "100%",
+                          borderColor: colors.border,
+                          background: "#000"
+                        }}
+                        renderCenterLeftControls={({ previousSlide }) => (
+                          <button
+                            onClick={previousSlide}
+                            className="p-2 ml-2 bg-gray-900 rounded-full bg-opacity-40 focus:outline-none hover:bg-opacity-60"
+                            aria-label="Previous Slide"
+                          >
+                            <FaChevronLeft className="text-lg text-white md:text-xl" />
+                          </button>
+                        )}
+                        renderCenterRightControls={({ nextSlide }) => (
+                          <button
+                            onClick={nextSlide}
+                            className="p-2 mr-2 bg-gray-900 rounded-full bg-opacity-40 focus:outline-none hover:bg-opacity-60"
+                            aria-label="Next Slide"
+                          >
+                            <FaChevronRight className="text-lg text-white md:text-xl" />
+                          </button>
+                        )}
+                      >
+                        {olympiad.images.map((img, i) => (
+                          <img
+                            key={i}
+                            src={img}
+                            alt={`Olympiad ${olympiad.year} Image ${i + 1}`}
+                            className="object-cover w-full h-64 md:h-80 lg:h-96"
+                            style={{ borderRadius: 16, border: `2px solid ${colors.border}` }}
+                          />
+                        ))}
+                      </Carousel>
+                    </div>
                   </div>
+                  
                   {/* Info */}
-                  <div className="flex-1 flex flex-col justify-center items-center md:items-start">
-                    <div className="flex items-center gap-3 mb-2">
-                      <FaTrophy style={{ color: colors.accent, fontSize: 28 }} />
-                      <h2 className="text-3xl font-bold" style={{ color: colors.accent }}>
+                  <div className="w-full">
+                    <div className="flex flex-col items-center justify-center gap-2 mb-4 sm:flex-row sm:gap-3">
+                      <FaTrophy style={{ color: colors.accent, fontSize: '1.5rem' }} className="md:text-2xl" />
+                      <h2 className="text-xl font-bold text-center sm:text-2xl md:text-3xl" style={{ color: colors.accent }}>
                         {olympiad.year} Winners
                       </h2>
                     </div>
-                    <ul className="list-decimal list-inside text-lg mt-4 mb-2 w-full max-w-lg" style={{ color: colors.subtext }}>
-                      {olympiad.teams.map((team, i) => (
-                        <li key={i} className="mb-2">{team}</li>
-                      ))}
-                    </ul>
+                    <div className="flex justify-center">
+                      <ul className="w-full max-w-2xl space-y-1 text-sm list-decimal list-inside md:text-lg md:space-y-2" style={{ color: colors.subtext }}>
+                        {olympiad.teams.map((team, i) => (
+                          <li key={i} className="break-words">{team}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
