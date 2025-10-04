@@ -117,6 +117,10 @@ export default function Home() {
           color: colors.text,
         }}
       >
+        <div style={{border: `2px solid ${colors.border}`, borderRadius: 20}}>
+        <p className="text-sm mb-4" style={{ color: colors.subtext, textAlign: "center", padding: 5, fontSize: 13, marginTop: 5, marginBottom: 7.5 }}>
+              Learn more about participating in the 2026 SRVSO by viewing our flyer below and clicking <u><a href="https://forms.gle/NMDMqMLGNnXRTBUS8" target='_blank' style={{color: "#5A93DB"}}>here</a></u> to sign up for our Information Nights!
+            </p></div>
         
         <div
           className="flex flex-row items-start max-w-6xl mx-auto mt-20 sm:mt-8 gap-x-20 sm:flex-col sm:gap-x-0 sm:gap-y-10 sm:items-center"
