@@ -102,7 +102,7 @@ export default function PastOlympiads() {
         {/* Theme Toggle Button */}
         <button
           onClick={toggleTheme}
-          className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8"
+          className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8 sm:absolute sm:top-5 sm:right-20 sm:p-1"
           aria-label="Toggle theme"
         >
           {isDark ? (
@@ -183,8 +183,8 @@ export default function PastOlympiads() {
                         {olympiad.year} Winners
                       </h2>
                     </div>
-                    <div className="flex justify-center">
-                      <ul className="w-full max-w-2xl space-y-1 text-sm list-decimal list-inside md:text-lg md:space-y-2" style={{ color: colors.subtext }}>
+                    <div className="flex justify-center" >
+                      <ul className="w-full max-w-2xl space-y-1 text-sm list-decimal list-inside md:text-lg md:space-y-2" style={{ color: colors.subtext, textAlign: 'center' }}>
                         {olympiad.teams.map((team, i) => (
                           <li key={i} className="break-words">{team}</li>
                         ))}

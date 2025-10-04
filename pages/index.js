@@ -10,32 +10,33 @@ export default function Home() {
   // Theme state: false = light, true = dark
   const [isDark, setIsDark] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(true);
 
   // Set dark class on <html> for Tailwind dark: support (not used for styles anymore)
   // Load theme from local storage on initial render
-useEffect(() => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    setIsDark(savedTheme === 'dark');
-  }
-}, []);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDark(savedTheme === 'dark');
+    }
+  }, []);
 
   useEffect(() => {
-  const html = document.documentElement;
-  if (isDark) {
-    html.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    html.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  }
-  // Cleanup function to remove the class when the component unmounts
-  return () => html.classList.remove('dark');
-}, [isDark]);
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+    // Cleanup function to remove the class when the component unmounts
+    return () => html.classList.remove('dark');
+  }, [isDark]);
 
   // Apply global theme styles to the body element
   useEffect(() => {
-    setLoading(false)
+    setLoading(false);
     document.body.style.backgroundColor = isDark ? "#000" : "#fff";
     document.body.style.color = isDark ? "#e5e7eb" : "#18181b";
     return () => {
@@ -63,6 +64,23 @@ useEffect(() => {
     testimonialsCardBg: isDark ? "#232326" : "#f3f4f6",
   };
 
+  const closePopup = () => setShowPopup(false);
+
+  // Check localStorage for popup visibility
+  useEffect(() => {
+    const hasSeenPopup = localStorage.getItem('hasSeenPopup');
+    if (!hasSeenPopup) {
+      setShowPopup(true);
+      localStorage.setItem('hasSeenPopup', 'true');
+    } else {
+      setShowPopup(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+
   if (loading) {
     return <h1>Loading...</h1>;
   }
@@ -78,19 +96,19 @@ useEffect(() => {
       </Head>
       {/* Theme Toggle Button */}
       <button
-          onClick={toggleTheme}
-          className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8 sm:absolute sm:top-4 sm:right-4 sm:p-1"
-          style={{
-            pointerEvents: "auto"
-          }}
-          aria-label="Toggle theme"
-        >
-          {isDark ? (
-            <FaSun className="text-xl text-white sm:text-lg" />
-          ) : (
-            <FaMoon className="text-xl text-gray-800 sm:text-lg" />
-          )}
-        </button>
+        onClick={toggleTheme}
+        className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8 sm:absolute sm:top-5 sm:right-20 sm:p-1"
+        style={{
+          pointerEvents: "auto"
+        }}
+        aria-label="Toggle theme"
+      >
+        {isDark ? (
+          <FaSun className="text-xl text-white sm:text-lg" />
+        ) : (
+          <FaMoon className="text-xl text-gray-800 sm:text-lg" />
+        )}
+      </button>
       {/* Root div */}
       <div
         className="flex flex-col min-h-screen"
@@ -99,10 +117,12 @@ useEffect(() => {
           color: colors.text,
         }}
       >
+        
         <div
           className="flex flex-row items-start max-w-6xl mx-auto mt-20 sm:mt-8 gap-x-20 sm:flex-col sm:gap-x-0 sm:gap-y-10 sm:items-center"
           style={{ marginLeft: "0" }}
-          >
+        >
+
 
           {/* Left: Text content */}
           <div
@@ -113,7 +133,7 @@ useEffect(() => {
             }}
           >
             <h1
-              className="mt-0 text-5xl font-bold leading-tight heading sm:text-3xl"
+              className="mt-0 text-5xl font-bold leading-tight heading sm:text-3xl sm:text-center"
               style={{
                 color: colors.text,
                 marginLeft: "0",
@@ -151,6 +171,7 @@ useEffect(() => {
               </div>
             </div>
           </div>
+          
           {/* Right: Carousel */}
           <div
             className="flex-1 min-w-[500px] min-h-[10px] max-w-xl w-full sm:min-w-[320px] sm:max-w-full"
@@ -274,7 +295,7 @@ useEffect(() => {
             </section>
           </div>
         </div>
-
+<em><p style={{alignItems: "center", justifyContent: "center", display: "flex", top: 50, position: "relative"}}>Questions? Contact us at:&nbsp; <u><a href="https://mail.google.com/mail/?view=cm&fs=1&to=srvusd2020@gmail.com">srvso2020@gmail.com</a></u></p></em>
         <section
           className="flex justify-between w-full px-8 mx-auto mt-32 max-w-7xl gap-x-16 sm:flex-col sm:gap-y-8 sm:mt-8"
           style={{
@@ -284,6 +305,7 @@ useEffect(() => {
             display: "flex",
           }}
         >
+          
           <div
             className="flex flex-col items-center flex-1 px-12 pt-14 pb-16 transition-transform transform border-b-4 cursor-default hover:scale-105 gap-y-8 sm:hover:scale-95 sm:scale-100 min-w-[380px] max-w-[500px] w-full sm:min-w-[220px] sm:max-w-full"
             style={{
@@ -375,7 +397,7 @@ useEffect(() => {
               style={{
                 background: colors.testimonialsCardBg,
                 borderTop: `4px solid ${isDark ? "#4ade80" : "#166534"}`,
-                
+
               }}
             >
               <p
@@ -447,6 +469,30 @@ useEffect(() => {
             </div>
           </div>
         </section>
+
+        {showPopup && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          onClick={closePopup}
+        >
+          <div
+            className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full"
+            style={{ color: colors.text, background: colors.cardBg, border: `2px solid ${colors.border}` }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-xl font-bold mb-4" style={{ color: colors.text }}>Welcome to SRVSO!</h2>
+            <p className="text-sm mb-4" style={{ color: colors.subtext }}>
+              Learn more about participating in the 2026 SRVSO by viewing our flyer below and clicking <u><a href="https://forms.gle/NMDMqMLGNnXRTBUS8" target='_blank' style={{color: "#5A93DB"}}>here</a></u> to sign up for our Information Nights!
+            </p>
+            <img
+              src="/images/information-night.png"
+              alt="Information Night"
+              className="rounded-lg w-full"
+              style={{ border: `2px solid ${colors.border}` }}
+            />
+          </div>
+        </div>
+      )}
       </div>
     </div>
   );

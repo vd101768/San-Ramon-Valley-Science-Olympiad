@@ -226,7 +226,7 @@ const OFFICERS = [
             name: 'Sundar Subramanian',
             img: '/images/officers/sundar.png',
             desc: "Sundar is currently an undergraduate student at UC Berkeley, studying Applied Mathematics and Computer Science. He aspires to work at the intersection of technology and finance and has conducted research in stochastic processes. Sundar has been involved with SRVSO since its founding in 2018, serving in various roles—from Build Events Chair to Executive Director. He now serves as President of the Board of Directors.",
-            role: "Founding Member, Executive Director 2024-2025 and 2023-2024"
+            role: "Founding Member and President of the Board of Directors, Executive Director from 2023-2025"
           },
         ],
       },
@@ -303,7 +303,7 @@ export default function BoardOfOfficers() {
     <>
       <button
         onClick={toggleTheme}
-        className="fixed z-50 p-2 rounded-full shadow top-6 right-8 "
+        className="fixed z-50 p-2 rounded-full shadow top-6 right-8 sm:absolute sm:top-5 sm:right-20 sm:p-1"
         aria-label="Toggle theme"
       >
         {isDark ? (
