@@ -39,11 +39,7 @@ export default function Header() {
               <a>Home</a>
             </Link>
           </li>
-           {/* <li>
-            <Link href="/resources">
-              <a>2026 Resources</a>
-            </Link>
-          </li> */}
+          
           <li>
             <Link href="/past-olympiads">
               <a>Past Olympiads</a>
@@ -53,6 +49,12 @@ export default function Header() {
           <li>
             <Link href="/board-of-officers">
               <a>Board of Officers</a>
+            </Link>
+            </li>
+
+          <li>
+            <Link href="/registration">
+              <a>Registration</a>
             </Link>
           </li>
         </ul>
@@ -101,6 +103,11 @@ export default function Header() {
                   <li>
                     <Link href="/board-of-officers">
                       <a className="menu-link">Board of Officers</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/registration">
+                      <a className="menu-link">Registration</a>
                     </Link>
                   </li>
                 </ul>

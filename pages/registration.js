@@ -1,89 +1,142 @@
 import Head from 'next/head';
-import { RiErrorWarningLine } from 'react-icons/ri';
+import { useState, useEffect } from 'react';
+import { FaSun, FaMoon, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Registration() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDark(savedTheme === 'dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+    document.body.style.backgroundColor = isDark ? "#000" : "#f9fafb";
+    document.body.style.color = isDark ? "#e5e7eb" : "#18181b";
+
+    return () => {
+      document.body.style.backgroundColor = "";
+      document.body.style.color = "";
+    };
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark((prev) => !prev);
+
+  const colors = {
+    background: isDark ? "#000" : "#f9fafb",
+    text: isDark ? "#e5e7eb" : "#18181b",
+    border: isDark ? "#4ade80" : "#166534",
+  };
+
   return (
-    <>
+    <div style={{ background: colors.background, color: colors.text }}>
       <Head>
         <title>Registration — SRVSO</title>
-        <meta
-          name="description"
-          content="Registration opened on October 31, 2021 and has closed."
-        />
+        <meta name="description" content="Register for the San Ramon Valley Science Olympiad." />
       </Head>
 
-      <div className="mb-12">
-        <h2 className="mb-4">Registration</h2>
-        <p className="text-lg">
-          Registration opened on October 31, 2021 and has closed.
-        </p>
-      </div>
+      {/* Theme Toggle Button */}
+      <button
+        onClick={toggleTheme}
+        className="fixed z-50 p-2 transition-all duration-300 rounded-full shadow top-6 right-8 sm:absolute sm:top-5 sm:right-20 sm:p-1"
+        style={{ pointerEvents: "auto" }}
+        aria-label="Toggle theme"
+      >
+        {isDark ? (
+          <FaSun className="text-xl text-white sm:text-lg" />
+        ) : (
+          <FaMoon className="text-xl text-gray-800 sm:text-lg" />
+        )}
+      </button>
 
-      <div className="flex flex-col px-8 border border-gray-800 py-7">
-        <div className="flex items-center mb-6 gap-x-2">
-          <div className="grid w-8 h-8 bg-gray-700 rounded-full place-items-center">
-            <span className="text-lg font-medium text-gray-100">1</span>
-          </div>
-          <p className="text-gray-400">
-            I already have a team of 6 formed from one school.
-          </p>
-        </div>
-        <iframe
-          title="2022 SRVSO Registration"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfbZ5d-hc0W7CFUxAdRuZv7DoApduASPIp70TnjW2_mVG3_KA/viewform?embedded=true"
-          marginHeight="0"
-          marginWidth="0"
-          className="flex-grow"
-        />
-        <div className="flex items-center px-4 py-2 mt-12 text-red-300 bg-red-800 rounded-md gap-x-2">
-          <RiErrorWarningLine className="w-6 h-6" />
-          <p className="text-sm">
-            If the form is not loading, please follow{' '}
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfbZ5d-hc0W7CFUxAdRuZv7DoApduASPIp70TnjW2_mVG3_KA/viewform?usp=sf_link"
-              target="_blank"
-              className="font-medium text-red-300 transition-colors hover:text-red-200"
-              rel="noopener noreferrer"
-            >
-              this link
-            </a>
-            .
-          </p>
-        </div>
-      </div>
+      <div className="max-w-6xl mx-auto py-10 px-4" >
+        <h1 className="text-4xl font-bold mb-6" style={{ color: colors.text, alignItems: "center", justifyContent: "center", display: "flex" }}>Registration</h1>
 
-      <div className="flex flex-col px-8 mt-8 border border-gray-800 py-7">
-        <div className="flex items-center mb-6 gap-x-2">
-          <div className="grid w-8 h-8 bg-gray-700 rounded-full place-items-center">
-            <span className="text-lg font-medium text-gray-100">2</span>
-          </div>
-          <p className="text-gray-400">
-            I currently don't have a full team of 6 from one school.
-          </p>
-        </div>
-        <iframe
-          title="Request to Join an SRVSO-Formed Team"
-          src="https://docs.google.com/forms/d/e/1FAIpQLScJDSJPY7032XBGqrmRtPCRVTQorgJLnlYfBWgubOtFB_x0gA/viewform?embedded=true"
-          marginHeight="0"
-          marginWidth="0"
-          className="flex-grow"
-        />
-        <div className="flex items-center px-4 py-2 mt-12 text-red-300 bg-red-800 rounded-md gap-x-2">
-          <RiErrorWarningLine className="w-6 h-6" />
-          <p className="text-sm">
-            If the form is not loading, please follow{' '}
+        {/* Embeds Grid */}
+        <div className="grid grid-cols-2" style={{ columnGap: 250, rowGap: 100, marginLeft: -150, marginTop: 50 }}>
+          {/* Slideshow Embed */}
+          <div style={{ position: "relative" }}>
+            <iframe
+              src="https://docs.google.com/presentation/d/1XyMosY7MVjPdeQ8K4IRapNJDrP5eBxfCnj7urGWIvWY/edit?slide=id.p#slide=id.p"
+              width="500"
+              height="400"
+              style={{ border: `2px solid ${colors.border}`, borderRadius: "8px" }}
+              allowFullScreen
+            ></iframe>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScJDSJPY7032XBGqrmRtPCRVTQorgJLnlYfBWgubOtFB_x0gA/viewform?embedded=true"
+              href="https://docs.google.com/presentation/d/1XyMosY7MVjPdeQ8K4IRapNJDrP5eBxfCnj7urGWIvWY/edit?slide=id.p#slide=id.p"
               target="_blank"
-              className="font-medium text-red-300 transition-colors hover:text-red-200"
               rel="noopener noreferrer"
+              style={{ position: "absolute", top: 10, right: -130, backgroundColor: "black", color: "white", padding: "5px", borderRadius: "50%", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
             >
-              this link
+              <FaExternalLinkAlt />
             </a>
-            .
-          </p>
+          </div>
+
+          {/* YouTube Video Embed */}
+          <div style={{ position: "relative" }}>
+            <iframe
+              src="https://www.youtube.com/watch?v=XCdJMmzR1Ro"
+              width="500"
+              height="400"
+              style={{ border: `2px solid ${colors.border}`, borderRadius: "8px" }}
+              allowFullScreen
+            ></iframe>
+            <a
+              href="https://www.youtube.com/watch?v=XCdJMmzR1Ro"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ position: "absolute", top: 10, right: -130, backgroundColor: "black", color: "white", padding: "5px", borderRadius: "50%", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <FaExternalLinkAlt />
+            </a>
+          </div>
+
+          {/* Document Embed */}
+          <div style={{ position: "relative" }}>
+            <iframe
+              src="https://docs.google.com/document/d/1F7inmjct7ZEGp1d7R47nkTJnd2zFG8vfXcEr0_21BIA/edit?tab=t.0"
+              width="500"
+              height="400"
+              style={{ border: `2px solid ${colors.border}`, borderRadius: "8px" }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1F7inmjct7ZEGp1d7R47nkTJnd2zFG8vfXcEr0_21BIA/edit?tab=t.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ position: "absolute", top: 10, right: -130, backgroundColor: "black", color: "white", padding: "5px", borderRadius: "50%", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <FaExternalLinkAlt />
+            </a>
+          </div>
+
+          {/* Google Form Embed */}
+          <div style={{ position: "relative" }}>
+            <iframe
+              src="https://forms.gle/XQhXydTuvdxwYk6h6"
+              width="500"
+              height="400"
+              style={{ border: `2px solid ${colors.border}`, borderRadius: "8px" }}
+            ></iframe>
+            <a
+              href="https://forms.gle/XQhXydTuvdxwYk6h6"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ position: "absolute", top: 10, right: -130, backgroundColor: "black", color: "white", padding: "5px", borderRadius: "50%", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <FaExternalLinkAlt />
+            </a>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
