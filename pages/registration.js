@@ -127,7 +127,7 @@ useEffect(() => {
               <iframe
                 src="https://docs.google.com/presentation/d/1XyMosY7MVjPdeQ8K4IRapNJDrP5eBxfCnj7urGWIvWY/edit?slide=id.p#slide=id.p"
                 width="100%"
-                height="300"
+                height="500"
                 className="sm:h-64"
                 style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
               ></iframe>
@@ -142,7 +142,7 @@ useEffect(() => {
               <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Information Night Video</h4>
               <iframe
                 width="100%"
-                height="300"
+                height="500"
                 className="sm:h-64"
                 src="https://www.youtube.com/embed/XCdJMmzR1Ro"
                 title="2025-2026 SRVSO Information Night"
@@ -163,7 +163,7 @@ useEffect(() => {
               <iframe
                 src="https://docs.google.com/document/d/1F7inmjct7ZEGp1d7R47nkTJnd2zFG8vfXcEr0_21BIA/edit?usp=sharing"
                 width="100%"
-                height="300"
+                height="1000"
                 className="sm:h-64"
                 style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
               ></iframe>
@@ -186,7 +186,7 @@ useEffect(() => {
               <iframe
                 src="https://forms.gle/XQhXydTuvdxwYk6h6"
                 width="100%"
-                height="300"
+                height="1000"
                 className="sm:h-64"
                 style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
               ></iframe>
