@@ -108,8 +108,8 @@ useEffect(() => {
       </Head> */}
 
       <div className="mb-12">
-        <h1 className="mb-4 text-center text-2xl sm:text-xl" style={{ color: isDark ? "#fff" : "#000" }}>Registration</h1>
-        <p className="text-lg text-center sm:text-base" style={{ color: isDark ? "#e5e7eb" : "#18181b" }}>
+        <h1 className="mb-4 text-center text-2xl sm:text-xl" style={{ color: isDark ? "#fff" : "#000", fontSize: 50 }}>Registration</h1>
+        <p className="text-lg text-center sm:text-base" style={{ color: isDark ? "#e5e7eb" : "#18181b", marginTop: 30 }}>
           To learn more about this year's Olympiad, please view our online Info Night and our associated Slideshow!
         </p>
       </div>
@@ -183,12 +183,21 @@ useEffect(() => {
               style={{ color: isDark ? '#fff' : '#000' }}
             >
               <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Registration Form</h4>
+              <em><p style={{color: "gray", marginLeft: 10, marginTop: -5}}>To register for SRVSO, please click on this <a
+                href="https://forms.gle/XQhXydTuvdxwYk6h6/"
+                target="_blank"
+                className="mt-2 text-sm text-center underline"
+                rel="noopener noreferrer"
+                style={{color: "#5A93DB"}}
+              >
+                link
+              </a> or fill out the form using the embed below.</p></em>
               <iframe
                 src="https://forms.gle/XQhXydTuvdxwYk6h6"
                 width="100%"
                 height="1000"
                 className="sm:h-64"
-                style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+                style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20, marginTop: 5 }}
               ></iframe>
               <a
                 href="https://forms.gle/XQhXydTuvdxwYk6h6/"

@@ -112,12 +112,12 @@ export default function PastOlympiads() {
           )}
         </button>
         <div className="max-w-6xl px-4 py-12 mx-auto">
-          <h1 className="mb-2 text-3xl font-bold text-center md:text-5xl" style={{ color: colors.text }}>
+          <h1 className="mb-2 text-3xl font-bold text-center md:text-5xl" style={{ color: colors.text, fontSize: 50 }}>
             Past Olympiads
           </h1>
-          <p className="mb-12 text-base text-center md:text-lg" style={{ color: colors.subtext }}>
+          <em><p className="mb-12 text-base text-center md:text-lg" style={{ color: colors.subtext, marginTop: 20 }}>
             A gallery of past olympiads, with pictures and results.
-          </p>
+          </p></em>
           <div className="flex flex-col gap-8 md:gap-16">
             {OLYMPIADS.map((olympiad, idx) => (
               <div
