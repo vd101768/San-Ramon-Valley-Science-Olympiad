@@ -57,6 +57,11 @@ export default function Header() {
               <a>Registration</a>
             </Link>
           </li>
+          <li>
+            <Link href="/resources">
+              <a>Resources</a>
+            </Link>
+          </li>
         </ul>
       </header>
 
@@ -108,6 +113,11 @@ export default function Header() {
                   <li>
                     <Link href="/registration">
                       <a className="menu-link">Registration</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/resources">
+                      <a className="menu-link">Resources</a>
                     </Link>
                   </li>
                 </ul>

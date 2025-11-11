@@ -107,7 +107,7 @@ useEffect(() => {
       <div className="mb-12">
         <h1 className="mb-4" style={{color: isDark ? "#fff" : "#000", alignSelf: "center", justifyContent: "center", display: "flex"}}>Resources</h1>
         <p className="text-lg" style={{alignSelf: "center", justifyContent: "center", display: "flex"}}>
-          Here's where you can find all the relevant resources for SRVSO 2025-26
+          Here's where you can find all the relevant resources for SRVSO 2025-26!
         </p>
         <p className="mt-7 text-md" style={{textAlign: "center"}}>
           Please note that SRVSO reserves the right to make changes to these
@@ -121,35 +121,43 @@ useEffect(() => {
             title="Coach Seminar Resources"
             isOpen={isDropdownOpen('coachSeminars')}
             onClick={() => handleDropdownChange('coachSeminars')}
-            style={{ color: isDark ? '#fff' : '#000' }}>
-            <Resource
-              title="Pre-Olympiad Logistics Meeting Recording"
-              url="https://www.youtube.com/watch?v=2AUfNh94DHA"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Pre-Olympiad Logistics Meeting Slideshow"
-              url="https://docs.google.com/presentation/d/1bTBVHahOFCrlyrDC6aEQbnn_26N5nkg58GOX8u-rn2A/edit?usp=sharing"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="FAQ & Coach Updates Meeting Recording"
-              url="https://www.youtube.com/watch?v=ltlNetiM0HM"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="FAQ & Coach Updates Meeting Slideshow"
-              url="https://docs.google.com/presentation/d/17x8bMlJ0ITuIRCLMIGEZjknErmJUfs0UdBYluDEtlX0/edit?usp=sharing"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            {/* <Resource
-              title="Coach Seminar Recording"
-              url="https://youtu.be/VC91kNpkWfA"
-            />
-            <Resource
-              title="Coach Seminar Slideshow"
-              url="https://docs.google.com/presentation/d/1vMHRZzEu2xw9pe_a0qhr1TNiGAybyhoHaUJM7crbpFQ/edit#slide=id.p"
-            /> */}
+            style={{ color: isDark ? '#fff' : '#000' }}
+          >
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Introductory Coach Seminar Recording</h4>
+            <iframe
+              src="https://www.youtube.com/embed/-xZEW0fngnw?si=Y9eBz-LAL4pVN1n9"
+              width="100%"
+              height="500"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+              allowFullScreen
+            ></iframe>
+            <a
+              href="https://www.youtube.com/embed/-xZEW0fngnw?si=Y9eBz-LAL4pVN1n9"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Introductory Coach Seminar Slideshow</h4>
+            <iframe
+              src="https://docs.google.com/presentation/d/1SLhRLChhHmaxK26CI3qnBpZNCs1TqJEjNrrO7ZVNKzg/edit?slide=id.p#slide=id.p"
+              width="100%"
+              height="500"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+              allowFullScreen
+            ></iframe>
+            <a
+              href="https://docs.google.com/presentation/d/1SLhRLChhHmaxK26CI3qnBpZNCs1TqJEjNrrO7ZVNKzg/edit?slide=id.p#slide=id.p"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
           </Dropdown>
           <Dropdown
             title="General Olympiad Resources"
@@ -157,16 +165,22 @@ useEffect(() => {
             onClick={() => handleDropdownChange('generalResources')}
             style={{ color: isDark ? '#fff' : '#000' }}
           >
-            <Resource
-              title="Ongoing Revisions Document"
-              url="https://docs.google.com/document/d/12X718Gz_cq1JlPig9cZaIK0j2u7zxO1e_3hoFl-sg0I/edit?usp=sharing"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Preliminary Event Overview & Master Team Schedule"
-              url="https://docs.google.com/spreadsheets/d/1qdNMBuYarUpvKMX_aguzJqUfVO5J_G_44J1NGZ-tq44/edit?usp=sharing"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Coach Seminar FAQs</h4>
+            <iframe
+              src="https://docs.google.com/document/d/1Vk6C32QkV93pw-VMLX30-PhSRh66CvmNiJlcItHqB2k/edit?tab=t.0"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1Vk6C32QkV93pw-VMLX30-PhSRh66CvmNiJlcItHqB2k/edit?tab=t.0"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
           </Dropdown>
           <Dropdown
             title="Build Event Resources"
@@ -174,26 +188,39 @@ useEffect(() => {
             onClick={() => handleDropdownChange('build')}
             style={{ color: isDark ? '#fff' : '#000' }}
           >
-            <Resource
-              title="Build Event Procedures"
-              url="https://docs.google.com/document/d/1s0Uae24bHKJWMPrjrvEMrV7Eecj2zAQyOo1GljKF5kY/edit?tab=t.0"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Build Event Walkthrough Steps"
-              url="https://docs.google.com/document/d/18Q0kbrqp9fwWVCaF3JMzeMEwoA-5GVUb3ZhWtYex_Uc/edit?usp=sharing"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Build Binder Layout"
-              url="https://docs.google.com/document/d/1E71PVyiMQ9WHKBvtvKV_0KG4rQ_j-5bBO93WSM815Nw/edit?tab=t.0"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Example Build Binder"
-              url="https://docs.google.com/document/d/10kYKd-bEw8MuJ4XK4QHmtZlG248d6M1sRcNQw5wjkgs/edit?usp=sharing"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Build Event Procedures</h4>
+            <iframe
+              src="https://docs.google.com/document/d/1tV1jr4R05IpW0ZWDmgahAf3VxPJ2bYNmilWy91WacrA/edit?tab=t.0"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1tV1jr4R05IpW0ZWDmgahAf3VxPJ2bYNmilWy91WacrA/edit?tab=t.0"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Build Binder Layout</h4>
+            <iframe
+              src="https://docs.google.com/document/d/1E71PVyiMQ9WHKBvtvKV_0KG4rQ_j-5bBO93WSM815Nw/edit?tab=t.0"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1E71PVyiMQ9WHKBvtvKV_0KG4rQ_j-5bBO93WSM815Nw/edit?tab=t.0"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
           </Dropdown>
 
           <Dropdown
@@ -202,11 +229,22 @@ useEffect(() => {
             onClick={() => handleDropdownChange('theoryWorkUps')}
             style={{ color: isDark ? '#fff' : '#000' }}
           >
-            <Resource
-              title="Theory Work Ups 2024-25"
-              url="https://docs.google.com/document/d/1eIpQWulA_ZYRrrUqRTUVxcaDBs_aiKndI68_6tp2fNA/edit?tab=t.0"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Theory Work Ups 2025-26</h4>
+            <iframe
+              src="https://docs.google.com/document/d/1IiZmQiAQoXtjMVo8fYPRAEmkCQnAdmnShVGvUa7dDEk/edit?tab=t.0"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1IiZmQiAQoXtjMVo8fYPRAEmkCQnAdmnShVGvUa7dDEk/edit?tab=t.0"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
           </Dropdown>
 
           <Dropdown
@@ -215,21 +253,22 @@ useEffect(() => {
             onClick={() => handleDropdownChange('challenges')}
             style={{ color: isDark ? '#fff' : '#000' }}
           >
-            <Resource
-              title="Instant Challenge Walkthrough Steps"
-              url="https://docs.google.com/document/d/1NtcIdsybGCIAGmxrScbx5fcs6MN_ZbqvvTklz2M-oKI/edit?tab=t.0"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Tower of Terror Practice Event"
-              url="https://docs.google.com/document/d/1Q_Lsb5fLW63MvTs22X2RCS4PCN6bQNwYw5ZiPzoifyg/edit?tab=t.0"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
-            <Resource
-              title="Float-A-Boat Practice Event"
-              url="https://docs.google.com/document/d/1DabNoRNTxIBtJioa0DIcG9x4dF1_BiK0uvx4Wl2YRBU/edit?tab=t.0"
-              style={{color: isDark ? '#4ade80' : '#166534'}}
-            />
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Straw Up! Practice Event</h4>
+            <iframe
+              src="https://docs.google.com/document/d/1LZhouNRmMHrk3LGtpg4sAjyvVrrn79axVe30wwl7AqI/edit?tab=t.0"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1LZhouNRmMHrk3LGtpg4sAjyvVrrn79axVe30wwl7AqI/edit?tab=t.0"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
           </Dropdown>
         </tbody>
       </table>
