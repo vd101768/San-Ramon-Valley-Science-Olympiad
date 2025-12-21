@@ -299,7 +299,7 @@ export default function Home() {
             </section>
           </div>
         </div>
-<em><p style={{alignItems: "center", justifyContent: "center", display: "flex", top: 50, position: "relative"}}>Questions? Contact us at:&nbsp; <u><a href="https://mail.google.com/mail/?view=cm&fs=1&to=srvusd2020@gmail.com">srvso2020@gmail.com</a></u></p></em>
+<em><p style={{alignItems: "center", justifyContent: "center", display: "flex", top: 50, position: "relative"}}>Questions? Contact us at:&nbsp; <u><a href="https://mail.google.com/mail/?view=cm&fs=1&to=srvso2020@gmail.com">srvso2020@gmail.com</a></u></p></em>
         <section
           className="flex justify-between w-full px-8 mx-auto mt-32 max-w-7xl gap-x-16 sm:flex-col sm:gap-y-8 sm:mt-8"
           style={{

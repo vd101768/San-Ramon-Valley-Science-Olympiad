@@ -221,6 +221,23 @@ useEffect(() => {
             >
               External link
             </a>
+
+            <h4 className="mb-2 ml-3 text-lg sm:text-base" style={{ color: isDark ? '#4ade80' : '#166534' }}>Build Events Ongoing Revisions</h4>
+            <iframe
+              src="https://docs.google.com/document/d/1tFc4TswybvLJO7yuCYYE_LrwKM-uEUKXmDXEp2uifNc/edit?tab=t.0"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{ border: isDark ? '4px solid #4ade80' : '4px solid #166534', borderRadius: 20 }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1tFc4TswybvLJO7yuCYYE_LrwKM-uEUKXmDXEp2uifNc/edit?tab=t.0"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
           </Dropdown>
 
           <Dropdown
