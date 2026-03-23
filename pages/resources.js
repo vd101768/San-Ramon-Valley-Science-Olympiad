@@ -142,11 +142,145 @@ const InfoNight = () => {
       <table className="w-full mb-12 border border-collapse border-gray-300">
         <tbody>
           <Dropdown
+            title="Olympiad Day Logistics"
+            isOpen={isDropdownOpen("olympiadDayLogistics")}
+            onClick={() => handleDropdownChange("olympiadDayLogistics")}
+            style={{ color: isDark ? "#fff" : "#000" }}
+          >
+            <h4
+              className="mb-2 ml-3 text-lg sm:text-base"
+              style={{ color: isDark ? "#4ade80" : "#166534" }}
+            >
+              Master Olympiad Schedule
+            </h4>
+            <iframe
+              src="https://docs.google.com/spreadsheets/d/15q_XIbAL2nd5fCFryu-PRw6BOai_VYGswzvvRyF-y5I/edit?usp=sharing"
+              width="100%"
+              height="500"
+              className="sm:h-64"
+              style={{
+                border: isDark ? "4px solid #4ade80" : "4px solid #166534",
+                borderRadius: 20,
+              }}
+              allowFullScreen
+            ></iframe>
+            <a
+              href="https://docs.google.com/spreadsheets/d/15q_XIbAL2nd5fCFryu-PRw6BOai_VYGswzvvRyF-y5I/edit?usp=sharing"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+
+            <h4
+              className="mb-2 ml-3 text-lg sm:text-base"
+              style={{ color: isDark ? "#4ade80" : "#166534" }}
+            >
+              Build Event Walkthroughs
+            </h4>
+            <iframe
+              src="https://docs.google.com/document/d/17btWHSuwL9mH8jE5q7Slaq5YOK9xr-9hH5lRlQrhda4/edit?usp=sharing"
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{
+                border: isDark ? "4px solid #4ade80" : "4px solid #166534",
+                borderRadius: 20,
+              }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/17btWHSuwL9mH8jE5q7Slaq5YOK9xr-9hH5lRlQrhda4/edit?usp=sharing"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+
+            <h4
+              className="mb-2 ml-3 text-lg sm:text-base"
+              style={{ color: isDark ? "#4ade80" : "#166534" }}
+            >
+              Instant Challenge Walkthroughs
+            </h4>
+            <iframe
+              src="https://docs.google.com/document/d/1TVA2Ppiz8sVYK9E2iVwjGSgvEVfDQVXI6ZZ6rZiKCk4/edit?usp=sharing "
+              width="100%"
+              height="1000"
+              className="sm:h-64"
+              style={{
+                border: isDark ? "4px solid #4ade80" : "4px solid #166534",
+                borderRadius: 20,
+              }}
+            ></iframe>
+            <a
+              href="https://docs.google.com/document/d/1TVA2Ppiz8sVYK9E2iVwjGSgvEVfDQVXI6ZZ6rZiKCk4/edit?usp=sharing"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+          </Dropdown>
+          <Dropdown
             title="Coach Seminar Resources"
             isOpen={isDropdownOpen("coachSeminars")}
             onClick={() => handleDropdownChange("coachSeminars")}
             style={{ color: isDark ? "#fff" : "#000" }}
           >
+            <h4
+              className="mb-2 ml-3 text-lg sm:text-base"
+              style={{ color: isDark ? "#4ade80" : "#166534" }}
+            >
+              Pre-Olympiad Logistics Meeting Slideshow
+            </h4>
+            <iframe
+              src="https://docs.google.com/presentation/d/14QWckJoARGd-OS4YMEZMWqVsbfKyAI2lokEEgU9zGYA/edit?usp=sharing"
+              width="100%"
+              height="500"
+              className="sm:h-64"
+              style={{
+                border: isDark ? "4px solid #4ade80" : "4px solid #166534",
+                borderRadius: 20,
+              }}
+              allowFullScreen
+            ></iframe>
+            <a
+              href="https://docs.google.com/presentation/d/14QWckJoARGd-OS4YMEZMWqVsbfKyAI2lokEEgU9zGYA/edit?usp=sharing"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+
+            <h4
+              className="mb-2 ml-3 text-lg sm:text-base"
+              style={{ color: isDark ? "#4ade80" : "#166534" }}
+            >
+              Pre-Olympiad Logistics Meeting
+            </h4>
+            <iframe
+              src="https://www.youtube.com/embed/CU1QYK2Q5Gc?si=kZjWILw1Iso6R404"
+              width="100%"
+              height="500"
+              className="sm:h-64"
+              style={{
+                border: isDark ? "4px solid #4ade80" : "4px solid #166534",
+                borderRadius: 20,
+              }}
+              allowFullScreen
+            ></iframe>
+            <a
+              href="https://www.youtube.com/embed/CU1QYK2Q5Gc?si=kZjWILw1Iso6R404"
+              target="_blank"
+              className="mt-2 text-sm text-center underline"
+              rel="noopener noreferrer"
+            >
+              External link
+            </a>
+
             <h4
               className="mb-2 ml-3 text-lg sm:text-base"
               style={{ color: isDark ? "#4ade80" : "#166534" }}
