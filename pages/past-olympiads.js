@@ -1,80 +1,80 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
   FaSun,
   FaMoon,
   FaTrophy,
-} from 'react-icons/fa';
-import Carousel from 'nuka-carousel';
+} from "react-icons/fa";
+import Carousel from "nuka-carousel";
 
 const OLYMPIADS = [
   {
-    year: '2025-2026',
+    year: "2025-2026",
     teams: [
-      'Flaming Hot STAARS - Live Oak Elementary School',
-      'Explosive Minions - Bollinger Canyon Elementary School',
-      'Sci-fi Girls - Coyote Creek Elementary School',
-      'Tachyon Trailblazers - Bella Vista Elementary School',
-      'Newtons Ninjas - Golden View Elementary School',
+      "Flaming Hot STAARS - Live Oak Elementary School",
+      "Explosive Minions - Bollinger Canyon Elementary School",
+      "Sci-fi Girls - Coyote Creek Elementary School",
+      "Tachyon Trailblazers - Bella Vista Elementary School",
+      "Newtons Ninjas - Golden View Elementary School",
     ],
     images: [
-      '/images/past-olympiads/25-26/image1.JPG',
-      '/images/past-olympiads/25-26/image2.JPG',
-      '/images/past-olympiads/25-26/image3.JPG',
-      '/images/past-olympiads/25-26/image4.JPG',
-      '/images/past-olympiads/25-26/image5.JPG',
+      "/images/past-olympiads/25-26/image1.JPG",
+      "/images/past-olympiads/25-26/image2.JPG",
+      "/images/past-olympiads/25-26/image3.JPG",
+      "/images/past-olympiads/25-26/image4.JPG",
+      "/images/past-olympiads/25-26/image5.JPG",
     ],
   },
   {
-    year: '2024-2025',
+    year: "2024-2025",
     teams: [
-      '6^(Us) - Bollinger Canyon Elementary School',
-      'Scientific Lakers - Bollinger Canyon Elementary School',
-      'The Einsteins - Bella Vista Elementary School',
-      'Odysseus - Bella Vista Elementary School',
-      'Peelys - John Baldwin Elementary School',
+      "6^(Us) - Bollinger Canyon Elementary School",
+      "Scientific Lakers - Bollinger Canyon Elementary School",
+      "The Einsteins - Bella Vista Elementary School",
+      "Odysseus - Bella Vista Elementary School",
+      "Peelys - John Baldwin Elementary School",
     ],
     images: [
-      '/images/past-olympiads/24-25/image1.JPG',
-      '/images/past-olympiads/24-25/image2.JPG',
-      '/images/past-olympiads/24-25/image3.JPG',
-      '/images/past-olympiads/24-25/image4.JPG',
-      '/images/past-olympiads/24-25/image5.JPG',
+      "/images/past-olympiads/24-25/image1.JPG",
+      "/images/past-olympiads/24-25/image2.JPG",
+      "/images/past-olympiads/24-25/image3.JPG",
+      "/images/past-olympiads/24-25/image4.JPG",
+      "/images/past-olympiads/24-25/image5.JPG",
     ],
   },
   {
-    year: '2023-2024',
+    year: "2023-2024",
     teams: [
-      'Science Smarties - Bella Vista Elementary School',
-      'The Einsteins - Bella Vista Elementary School',
-      'Scientific Lakers - Bollinger Canyon Elementary School',
-      'Curious Coyotes - Coyote Creek Elementary School',
-      'Blazing Stars - Bella Vista Elementary School',
+      "Science Smarties - Bella Vista Elementary School",
+      "The Einsteins - Bella Vista Elementary School",
+      "Scientific Lakers - Bollinger Canyon Elementary School",
+      "Curious Coyotes - Coyote Creek Elementary School",
+      "Blazing Stars - Bella Vista Elementary School",
     ],
     images: [
-      '/images/past-olympiads/23-24/24image1.png',
-      '/images/past-olympiads/23-24/24image2.JPG',
-      '/images/past-olympiads/23-24/24image3.JPG',
-      '/images/past-olympiads/23-24/24image4.JPG',
-      '/images/past-olympiads/23-24/24image5.JPG',
+      "/images/past-olympiads/23-24/24image1.png",
+      "/images/past-olympiads/23-24/24image2.JPG",
+      "/images/past-olympiads/23-24/24image3.JPG",
+      "/images/past-olympiads/23-24/24image4.JPG",
+      "/images/past-olympiads/23-24/24image5.JPG",
     ],
   } /* */,
   {
-    year: '2022-2023',
+    year: "2022-2023",
     teams: [
-      'Golden Sonic - Live Oak Elementary School',
-      'The Elementals - Bollinger Canyon Elementary School',
-      'Carbon 6 - Bella Vista Elementary School',
-      'The Science Hawks - Hidden Hills Elementary School',
-      'Science MAVVENs - Neil Armstrong Elementary School',
+      "Golden Sonic - Live Oak Elementary School",
+      "The Elementals - Bollinger Canyon Elementary School",
+      "Carbon 6 - Bella Vista Elementary School",
+      "The Science Hawks - Hidden Hills Elementary School",
+      "Science MAVVENs - Neil Armstrong Elementary School",
     ],
     images: [
-      '/images/past-olympiads/22-23/23image1.png',
-      '/images/past-olympiads/22-23/23image2.png',
-      '/images/past-olympiads/22-23/23image3.png',
-      '/images/past-olympiads/22-23/23image4.jpg',
-      '/images/past-olympiads/22-23/23image5.png',
+      "/images/past-olympiads/22-23/23image1.png",
+      "/images/past-olympiads/22-23/23image2.png",
+      "/images/past-olympiads/22-23/23image3.png",
+      "/images/past-olympiads/22-23/23image4.jpg",
+      "/images/past-olympiads/22-23/23image5.png",
     ],
   },
 ];
@@ -83,40 +83,40 @@ export default function PastOlympiads() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) setIsDark(savedTheme === 'dark');
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) setIsDark(savedTheme === "dark");
   }, []);
 
   useEffect(() => {
     const html = document.documentElement;
     if (isDark) {
-      html.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      html.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-    return () => html.classList.remove('dark');
+    return () => html.classList.remove("dark");
   }, [isDark]);
 
   useEffect(() => {
-    document.body.style.backgroundColor = isDark ? '#000' : '#fff';
-    document.body.style.color = isDark ? '#e5e7eb' : '#1f2937';
+    document.body.style.backgroundColor = isDark ? "#000" : "#fff";
+    document.body.style.color = isDark ? "#e5e7eb" : "#1f2937";
     return () => {
-      document.body.style.backgroundColor = '';
-      document.body.style.color = '';
+      document.body.style.backgroundColor = "";
+      document.body.style.color = "";
     };
   }, [isDark]);
 
   const toggleTheme = () => setIsDark((prev) => !prev);
 
   const colors = {
-    background: isDark ? '#18181b' : '#f9fafb',
-    card: isDark ? '#232326' : '#fff',
-    border: isDark ? '#4ade80' : '#166534',
-    text: isDark ? '#e5e7eb' : '#18181b',
-    subtext: isDark ? '#a1a1aa' : '#374151',
-    accent: isDark ? '#4ade80' : '#166534',
+    background: isDark ? "#18181b" : "#f9fafb",
+    card: isDark ? "#232326" : "#fff",
+    border: isDark ? "#4ade80" : "#166534",
+    text: isDark ? "#e5e7eb" : "#18181b",
+    subtext: isDark ? "#a1a1aa" : "#374151",
+    accent: isDark ? "#4ade80" : "#166534",
   };
 
   return (
@@ -169,9 +169,9 @@ export default function PastOlympiads() {
                       swiping
                       wrapAround
                       style={{
-                        width: '100%',
+                        width: "100%",
                         borderColor: colors.border,
-                        background: '#000',
+                        background: "#000",
                       }}
                       renderCenterLeftControls={({ previousSlide }) => (
                         <button
@@ -212,7 +212,7 @@ export default function PastOlympiads() {
                 <div className="w-full">
                   <div className="flex flex-col items-center justify-center gap-2 mb-4 sm:flex-row sm:gap-3">
                     <FaTrophy
-                      style={{ color: colors.accent, fontSize: '1.5rem' }}
+                      style={{ color: colors.accent, fontSize: "1.5rem" }}
                       className="md:text-2xl"
                     />
                     <h2
@@ -225,7 +225,7 @@ export default function PastOlympiads() {
                   <div className="flex justify-center">
                     <ul
                       className="w-full max-w-2xl space-y-1 text-sm list-decimal list-inside md:text-lg md:space-y-2"
-                      style={{ color: colors.subtext, textAlign: 'center' }}
+                      style={{ color: colors.subtext, textAlign: "center" }}
                     >
                       {olympiad.teams.map((team, i) => (
                         <li key={i} className="break-words">
