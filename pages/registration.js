@@ -172,7 +172,7 @@ export default function Registration() {
                 width="100%"
                 height="500"
                 className="sm:h-64"
-                src="https://docs.google.com/document/d/1FI1ayXoNv0QtanhQ1AkRh628rqG3vK_4jMGbT01t1a8/edit?usp=sharing"
+                src="https://www.youtube.com/embed/JTXhwGcIVes"
                 title="2025-2026 SRVSO Information Night"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -197,7 +197,7 @@ export default function Registration() {
                 Registration Instructions
               </h4>
               <iframe
-                src="https://docs.google.com/document/d/1FI1ayXoNv0QtanhQ1AkRh628rqG3vK_4jMGbT01t1a8/edit?usp=sharing"
+                src="https://docs.google.com/document/d/1RsaU2CNM7oqcxMgsESDQFDPMNF_0Zir395I7A0WTOCw/edit?usp=sharing"
                 width="100%"
                 height="1000"
                 className="sm:h-64"
@@ -207,7 +207,7 @@ export default function Registration() {
                 }}
               ></iframe>
               <a
-                href="https://docs.google.com/document/d/1FI1ayXoNv0QtanhQ1AkRh628rqG3vK_4jMGbT01t1a8/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1RsaU2CNM7oqcxMgsESDQFDPMNF_0Zir395I7A0WTOCw/edit?usp=sharing"
                 target="_blank"
                 className="mt-2 text-sm text-center underline"
                 rel="noopener noreferrer"
@@ -231,7 +231,7 @@ export default function Registration() {
                 <p style={{ color: "gray", marginLeft: 10, marginTop: -5 }}>
                   To register for SRVSO, please click on this{" "}
                   <a
-                    href="https://forms.gle/XQhXydTuvdxwYk6h6/"
+                    href="https://forms.gle/UxpfwKcL52sXh2VT6"
                     target="_blank"
                     className="mt-2 text-sm text-center underline"
                     rel="noopener noreferrer"
@@ -243,7 +243,7 @@ export default function Registration() {
                 </p>
               </em>
               <iframe
-                src="https://forms.gle/XQhXydTuvdxwYk6h6"
+                src="https://forms.gle/UxpfwKcL52sXh2VT6"
                 width="100%"
                 height="1000"
                 className="sm:h-64"
@@ -254,7 +254,7 @@ export default function Registration() {
                 }}
               ></iframe>
               <a
-                href="https://forms.gle/XQhXydTuvdxwYk6h6/"
+                href="https://forms.gle/UxpfwKcL52sXh2VT6"
                 target="_blank"
                 className="mt-2 text-sm text-center underline"
                 rel="noopener noreferrer"
